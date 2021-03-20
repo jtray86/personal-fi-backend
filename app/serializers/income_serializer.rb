@@ -1,3 +1,3 @@
 class IncomeSerializer < ActiveModel::Serializer
-  attributes :id, :type, :name, :projected
+  attributes :id, :income_type, :name, :projected
 end

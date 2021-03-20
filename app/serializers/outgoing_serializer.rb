@@ -1,3 +1,3 @@
 class OutgoingSerializer < ActiveModel::Serializer
-  attributes :id, :type, :name, :projected, :date
+  attributes :id, :outgoing_type, :name, :projected, :due_date
 end

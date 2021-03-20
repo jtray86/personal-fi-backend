@@ -1,3 +1,3 @@
 class DebtSerializer < ActiveModel::Serializer
-  attributes :id, :type, :name, :inital_amount, :current_ammount, :interest, :in_collection
+  attributes :id, :debt_type, :name, :inital_amount, :current_amount, :interest, :in_collection
 end

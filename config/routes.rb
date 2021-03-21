@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
 
   get '/debt/:id', to:'debts#index'
+  patch '/debt/:id', to:'debts#update'
+
+  get '/transaction/:id', to:'transactions#index'
+  post '/transaction/:id', to:'transactions#create'
 
   get '/income/:id', to:'incomes#index'
   post '/newIncome', to:'incomes#create'
@@ -12,6 +16,7 @@ Rails.application.routes.draw do
   post '/newEarning', to:'earnings#create'
 
   get '/bill/:id', to:'bills#index'
+  patch '/bill/:id', to:'bills#update'
 
   get '/deposit/:id', to:'deposits#index'
 

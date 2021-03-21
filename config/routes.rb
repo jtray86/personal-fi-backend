@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get '/debt/:id', to:'debts#index'
 
   get '/income/:id', to:'incomes#index'
+  post '/newIncome', to:'incomes#create'
 
   get '/earning/:id', to:'earnings#index'
+  patch '/earning/:id', to:'earnings#update'
+  post '/newEarning', to:'earnings#create'
 
   get '/bill/:id', to:'bills#index'
 

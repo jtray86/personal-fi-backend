@@ -225,7 +225,7 @@ Debt.create(
 
 Transaction.create(
     user_id: 1,
-    debt_id: 1,
+    debt_id: 2,
     transaction_date: '2021-03-25',
     amount: nil
 )

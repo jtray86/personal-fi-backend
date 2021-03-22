@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   patch '/bill/:id', to:'bills#update'
 
   get '/deposit/:id', to:'deposits#index'
+  post '/deposit', to:'deposits#create'
+
+  get '/saving/:id', to:'savings#index'
+  patch '/saving/:id', to:'savings#update'
 
   # resources :transactions
   # resources :earnings

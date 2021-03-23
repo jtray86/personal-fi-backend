@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get '/saving/:id', to:'savings#index'
   patch '/saving/:id', to:'savings#update'
+  
+  delete'/outgoing/:id', to:'outgoings#delete'
 
   # resources :transactions
   # resources :earnings

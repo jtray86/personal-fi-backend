@@ -31,11 +31,25 @@ Saving.create(
     amount: 1225
 )
 
+Saving.create(
+    saving_type: "Retirement",
+    name: "Sara's 401K",
+    amount: 5600
+)
+
+
 Deposit.create(
     user_id: 1,
     saving_id: 1,
     deposit_date: '2021-03-15',
     amount: 1225
+)
+
+Deposit.create(
+    user_id: 1,
+    saving_id: 2,
+    deposit_date: '2021-03-15',
+    amount: 5600
 )
 
 Outgoing.create(
@@ -212,7 +226,7 @@ Debt.create(
     inital_amount: 2580,
     current_amount: 2500,
     interest: 17,
-    in_collection: true
+    in_collection: false
 )
 Debt.create(
     debt_type: "Credit Card",
@@ -220,7 +234,39 @@ Debt.create(
     inital_amount: 5000,
     current_amount: 3250,
     interest: 18,
+    in_collection: false
+)
+
+Debt.create(
+    debt_type: "Medical",
+    name: "Apendix removal",
+    inital_amount: 800,
+    current_amount: 800,
+    interest: 0,
     in_collection: true
+)
+
+Debt.create(
+    debt_type: "Student Loan",
+    name: "Mohela",
+    inital_amount: 17000,
+    current_amount: 17000,
+    interest: 6,
+    in_collection: false
+)
+
+Transaction.create(
+    user_id: 1,
+    debt_id: 4,
+    transaction_date: '2021-03-25',
+    amount: nil
+)
+
+Transaction.create(
+    user_id: 1,
+    debt_id: 3,
+    transaction_date: '2021-03-25',
+    amount: nil
 )
 
 Transaction.create(

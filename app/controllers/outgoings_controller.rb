@@ -4,6 +4,6 @@ class OutgoingsController < ApplicationController
     
         outgoing.destroy
 
-        render json: {}
+        render json: outgoing
     end
 end

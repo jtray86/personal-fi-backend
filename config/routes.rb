@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   patch '/saving/:id', to:'savings#update'
 
 
-  delete'/outgoing/:id', to:'outgoings#index'
+  get'/outgoing/:id', to:'outgoings#index'
   delete'/outgoing/:id', to:'outgoings#delete'
 
   # resources :transactions

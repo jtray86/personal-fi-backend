@@ -8,33 +8,33 @@ User.create(
 Income.create(
     income_type: "w2 Job",
     name: "Sara google",
-    projected: 1238
+    projected: 925.56
 )
 
 Earning.create(
     user_id: 1,
     income_id: 1,
     pay_day: '2021-03-06',
-    actual: 1225
+    actual: 925.56
 )
 
 Earning.create(
     user_id: 1,
     income_id: 1,
     pay_day: '2021-03-15',
-    actual: 1230
+    actual: 925.56
 )
 
 Saving.create(
     saving_type: "Emergancy Savings",
     name: "Sara's Savings",
-    amount: 1225
+    amount: 1225.97
 )
 
 Saving.create(
     saving_type: "Retirement",
     name: "Sara's 401K",
-    amount: 5600
+    amount: 5600.7
 )
 
 
@@ -42,14 +42,14 @@ Deposit.create(
     user_id: 1,
     saving_id: 1,
     deposit_date: '2021-03-15',
-    amount: 1225
+    amount: 1225.97
 )
 
 Deposit.create(
     user_id: 1,
     saving_id: 2,
     deposit_date: '2021-03-15',
-    amount: 5600
+    amount: 5600.7
 )
 
 Outgoing.create(

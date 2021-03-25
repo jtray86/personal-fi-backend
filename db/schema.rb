@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_16_190758) do
+ActiveRecord::Schema.define(version: 2021_03_25_193003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_190758) do
   create_table "bills", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "outgoing_id", null: false
-    t.integer "actual"
+    t.float "actual"
     t.date "paid_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 2021_03_16_190758) do
   create_table "debts", force: :cascade do |t|
     t.string "debt_type"
     t.string "name"
-    t.integer "inital_amount"
-    t.integer "current_amount"
+    t.float "inital_amount"
+    t.float "current_amount"
     t.integer "interest"
     t.boolean "in_collection"
     t.datetime "created_at", precision: 6, null: false
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_190758) do
   create_table "deposits", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "saving_id", null: false
-    t.integer "amount"
+    t.float "amount"
     t.date "deposit_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_190758) do
   create_table "earnings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "income_id", null: false
-    t.integer "actual"
+    t.float "actual"
     t.date "pay_day"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_190758) do
   create_table "incomes", force: :cascade do |t|
     t.string "income_type"
     t.string "name"
-    t.integer "projected"
+    t.float "projected"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_190758) do
   create_table "outgoings", force: :cascade do |t|
     t.string "outgoing_type"
     t.string "name"
-    t.integer "projected"
+    t.float "projected"
     t.date "due_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_190758) do
   create_table "savings", force: :cascade do |t|
     t.string "saving_type"
     t.string "name"
-    t.integer "amount"
+    t.float "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_190758) do
   create_table "transactions", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "debt_id", null: false
-    t.integer "amount"
+    t.float "amount"
     t.date "transaction_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

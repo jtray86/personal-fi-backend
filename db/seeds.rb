@@ -67,7 +67,7 @@ Outgoing.create(
 )
 
 Outgoing.create(
-    outgoing_type: "Rent",
+    outgoing_type: "Housing",
     name: "rent", 
     projected: 1565.00,
     due_date: '2021-03-01'

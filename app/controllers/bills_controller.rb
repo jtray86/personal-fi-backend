@@ -6,6 +6,12 @@ class BillsController < ApplicationController
         render json: all_bills
     end
 
+    def show
+        bill = Bill.find_by(id: params[:id])
+
+        render json: bill
+    end
+
     def update
         bill = Bill.find_by(id: params[:id])
         bill.update(actual: params[:actual])

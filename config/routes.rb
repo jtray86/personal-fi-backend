@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/bill/:id', to:'bills#index'
   get '/bill/show/:id', to:'bills#show'
   patch '/bill/:id', to:'bills#update'
+  post '/newBill', to:'bills#create'
 
   get '/deposit/:id', to:'deposits#index'
   post '/deposit', to:'deposits#create'
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
   get'/outgoing/:id', to:'outgoings#index'
   patch'/outgoing/:id', to:'outgoings#update'
   delete'/outgoing/:id', to:'outgoings#delete'
+  post '/newOutgoing', to:'outgoings#create'
 
   # resources :transactions
   # resources :earnings

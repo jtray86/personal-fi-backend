@@ -18,4 +18,17 @@ class BillsController < ApplicationController
       
         render json: bill
       end
+
+    def create
+        bill_params = params.permit(:user_id, :outgoing_id, :actual, :paid_date)
+        # create a new user in the database (User.create)
+        bill = Bill.create(bill_params)
+        if bill.valid?
+            # send back a response with new user
+            render json: bill, status: :created
+        else
+            # error messages
+            render json: { errors: bill.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
 end

@@ -14,7 +14,20 @@ class OutgoingsController < ApplicationController
         due_date: params[:editOutgoingForm][:due_date])
       
         render json: outgoing
-      end
+    end
+
+    def create
+        outgoing_params = params.permit(:outgoing_type, :name, :projected, :due_date)
+        # create a new user in the database (User.create)
+        outgoing = Outgoing.create(outgoing_params)
+        if outgoing.valid?
+            # send back a response with new user
+            render json: outgoing, status: :created
+        else
+            # error messages
+            render json: { errors: outgoing.errors.full_messages }, status: :unprocessable_entity
+        end
+    end  
 
     def delete
         outgoing = Outgoing.find_by(id: params[:id])

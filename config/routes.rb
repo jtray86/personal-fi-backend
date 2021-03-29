@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   get '/saving/:id', to:'savings#index'
   patch '/saving/:id', to:'savings#update'
-
+  post '/saving', to:'savings#create'
 
   get'/outgoing/:id', to:'outgoings#index'
   patch'/outgoing/:id', to:'outgoings#update'

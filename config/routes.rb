@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   get '/debt/:id', to:'debts#index'
   patch '/debt/:id', to:'debts#update'
+  post '/newDebt', to:'debts#create'
 
   get '/transaction/:id', to:'transactions#index'
-  post '/transaction/:id', to:'transactions#create'
+  post '/transaction', to:'transactions#create'
 
   get '/income/:id', to:'incomes#index'
   post '/newIncome', to:'incomes#create'

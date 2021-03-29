@@ -12,4 +12,17 @@ class DebtsController < ApplicationController
       
         render json: debt
       end
+
+    def create
+        debt_params = params.permit(:debt_type, :name, :inital_amount, :current_amount, :interest, :in_collection)
+        
+        debt = Debt.create(debt_params)
+        if debt.valid?
+            
+            render json: debt, status: :created
+        else
+            
+            render json: { errors: debt.errors.full_messages }, status: :unprocessable_entity
+        end
+    end 
 end
